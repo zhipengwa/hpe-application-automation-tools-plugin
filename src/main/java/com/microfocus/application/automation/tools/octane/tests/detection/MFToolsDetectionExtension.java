@@ -133,7 +133,7 @@ public class MFToolsDetectionExtension extends ResultFieldsDetectionExtension {
 
         if (hpRunnerType == HPRunnerType.UFT) {
             ParameterValue octaneFramework = parameterAction != null ? parameterAction.getParameter("octaneTestRunnerFramework") : null;
-            if(octaneFramework!=null && octaneFramework.getValue().equals("MBT")){
+            if(octaneFramework!=null && octaneFramework.getValue().toString().equalsIgnoreCase("MBT")){
                 hpRunnerType = HPRunnerType.UFT_MBT;
             }
         }
