@@ -190,7 +190,7 @@ async function loadMobileInfo(a, b, o, err) {
             if (isSaaS) {
                 openedWindow.location.href = baseUrl + "/integration8/en/#/main/wizard?TENANTID=" + tenantId + "&jobId=" +  jobId + "&displayUFTMode=true";
             } else {
-                openedWindow.location.href = baseUrl + "/integration/#/login?jobId=" + jobId + "&displayUFTMode=true";
+                openedWindow.location.href = baseUrl + "/integration8/en/#/login?jobId=" + jobId + "&displayUFTMode=true";
             }
 
             const msgCallback = async (ev) => {
