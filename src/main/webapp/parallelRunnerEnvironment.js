@@ -329,7 +329,22 @@ Utils.loadMC = function(a, b, prEnv){
 			return;
 		}
         a.getJobId(baseUrl, mcUserName, mcPassword, mcTenantId, mcExecToken, mcAuthType, useProxyAuth, proxyAddress, proxyUserName, proxyPassword, previousJobId, function (response) {
-			var jobId = response.responseObject();
+			let map = response.responseObject();
+			let jobId = '';
+			let tenantId = '';
+			let isSaaS = false;
+			//First need to check the return type(not sure if java map can automatically covert to js map)
+			if(map.hasOwnProperty("jobId")) {
+				jobId = map["jobId"];
+			}
+			if(map.hasOwnProperty("TENANT_ID_COOKIE")) {
+				tenantId = map["TENANT_ID_COOKIE"];
+			}
+			if(map.hasOwnProperty("isSaaS")) {
+				isSaaS = map["isSaaS"];
+			}
+
+			// var jobId = response.responseObject();
 			if(jobId == null) {
 				ParallelRunnerEnv.setEnvironmentError(prEnv,true);
 				b.disabled = false;
@@ -337,7 +352,11 @@ Utils.loadMC = function(a, b, prEnv){
 			}
 			var openedWindow = window.open('/','test parameters','height=820,width=1130');
 			openedWindow.location.href = 'about:blank';
-			openedWindow.location.href = baseUrl+"/integration/#/login?jobId="+jobId+"&displayUFTMode=true&deviceOnly=true";
+			if (isSaaS) {
+				openedWindow.location.href = baseUrl + "/integration8/en/#/main/wizard?TENANTID=" + tenantId + "&jobId=" +  jobId + "&displayUFTMode=true&deviceOnly=true";
+			} else {
+				openedWindow.location.href = baseUrl+"/integration8/en/#/login?jobId="+jobId+"&displayUFTMode=true&deviceOnly=true";
+			}
 			var messageCallBack = function (event) {
 				if (event?.data=="mcCloseWizard") {
                     a.populateAppAndDevice(baseUrl, mcUserName, mcPassword, mcTenantId, mcExecToken, mcAuthType, useProxyAuth, proxyAddress, proxyUserName, proxyPassword, jobId, function (app) {
