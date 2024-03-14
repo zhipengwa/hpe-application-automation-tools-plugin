@@ -53,20 +53,18 @@ Starting with version 1.641 (or 1.625.3), Jenkins introduced the  **Content-Secu
 
 ## New Features and Enhancements
 
-Version CE 23.4 introduced the following enhancements and fixes:
+Version CE 24.1.0 introduced the following enhancements and fixes:
 
 **UFT One**
- - Support for access key authentication to run parallel mobile tests.
- - Ability to run tests on public devices hosted by ValueEdge Digital Lab.
+ - Added support for Cloud browser.
+ - Fixed proxy issue for Digital Lab connections.
 
 **UFT Digital Lab**
- - Ability to upload an application to a specific workspace during a Jenkins pipeline cycle.
+ - Added ability to open the ValueEdge Digital Lab wizard from Jenkins via an access key only.
 
 **ALM Octane**
+- Newly discovered units will automatically be allocated to a runner. A new folder will be created for each runner.
 - Bug fixes.
-
-**LoadRunner Enterprise**
- - Parameterization support for the Timeslot duration.
   
 For information about enhancements introduced in previous versions, see [What's new in earlier versions](WhatsNewEarlier.md). 
 
@@ -93,8 +91,8 @@ This plugin supports the following OpenText product versions:
 
 | OpenText tool                                    | Supported versions                                           | Find more information...                                     |
 | :-------------------------------------------------- | :----------------------------------------------------------- | ------------------------------------------------------------ |
-| ALM (Application Lifecycle Management)              | 12.xx, 15.x, 16.x, 17.x                                                  | [ALM Integration  page](https://admhelp.microfocus.com/alm/en/latest/online_help/Content/jenkins-integration.htm)                  |
-| ALM Lab Management                                  | 12.xx, 15.x, 16.x, 17.x                                                 | [ALM Integration page](https://admhelp.microfocus.com/alm/en/latest/online_help/Content/jenkins-integration.htm#mt-item-3) |
+| ALM (Application Lifecycle Management)              | 12.xx, 15.x, 16.x, 17.x, 24.x                                                  | [ALM Integration  page](https://admhelp.microfocus.com/alm/en/latest/online_help/Content/jenkins-integration.htm)                  |
+| ALM Lab Management                                  | 12.xx, 15.x, 16.x, 17.x, 24.x                                                | [ALM Integration page](https://admhelp.microfocus.com/alm/en/latest/online_help/Content/jenkins-integration.htm#mt-item-3) |
 | ALM Octane                                          | 12.53.20 and higher (12.55.4 or later required for direct UFT One integration and for LoadRunner Enterprise integration using pipelines) | [ALM Octane Help Center](https://admhelp.microfocus.com/octane/en/latest/Online/Content/AdminGuide/jenkins-integration.htm) |
 | LoadRunner Enterprise                               | 12.xx (12.53 or higher required for trend reports), 2020 and higher     | [LoadRunner Enterprise Help Center](https://admhelp.microfocus.com/lre/en/latest/online_help/Content/PC/Continuous-Integration-Jenkins.htm) |
 | LoadRunner Professional                             | 12.xx, 2020 and higher                                       | [LoadRunner Professional Integration page](https://admhelp.microfocus.com/lr/en/latest/help/WebHelp/Content/Controller/c_jenkins.htm)             |
@@ -127,9 +125,9 @@ This plugin supports the following OpenText product versions:
 7. **For building and tracking pipelines on ALM Octane:**
 
    *  JQuery Plugin 1.7.2-1 or later (Required to enable the integration)
-   *  A plugin that enables publishing test results. For example, JUnit Plugin 1.10 or later, NUnit plugin, and so on (Required to enable ALM Octane to collect your automated test results).
+   *  A plugin that enables publishing test results. For example, JUnit Plugin 1.10 or later, NUnit plugin, and so on (Required to enable ALM Octane/ValuEdge  to collect your automated test results).
 
-8. **For ALM Octane integration with UFT One**, make sure you have version 2.4.4 or higher of the Git plugin.
+8. **For ALM Octane/ValueEdge integration with UFT One**, make sure you have version 2.4.4 or higher of the Git plugin.
 
 # User Guide
 
