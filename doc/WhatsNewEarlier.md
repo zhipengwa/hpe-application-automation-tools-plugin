@@ -5,6 +5,8 @@ This page shows a history of the enhancements made to the OpenText Application A
 
 See the [Changelog ](https://wiki.jenkins.io/display/JENKINS/Changelog)for information about beta versions and recent patches.
 
+[What&#39;s New in version CE 23.4 ](#what&#39;s-new-in-version-CE-23&#46;4)
+
 [What&#39;s New in version 23.3.0 ](#what&#39;s-new-in-version-23&#46;3&#46;0)
 
 [What&#39;s New in version 8.0 ](#what&#39;s-new-in-version-8&#46;0)
@@ -40,6 +42,23 @@ See the [Changelog ](https://wiki.jenkins.io/display/JENKINS/Changelog)for infor
 [What&#39;s New in version 6.0 ](#what&#39;s-new-in-version-6.0)
 
 [What&#39;s New in version 5.9 ](#what&#39;s-new-in-version-5.9)
+
+## What&#39;s New in version CE 23&#46;4
+
+Version CE 23.4 introduced the following enhancements and fixes:
+
+**UFT One**
+ - Support for access key authentication to run parallel mobile tests.
+ - Ability to run tests on public devices hosted by ValueEdge Digital Lab.
+
+**UFT Digital Lab**
+ - Ability to upload an application to a specific workspace during a Jenkins pipeline cycle.
+
+**ALM Octane**
+- Bug fixes.
+
+**LoadRunner Enterprise**
+ - Parameterization support for the Timeslot duration.
 
 ## What&#39;s New in version 23&#46;3&#46;0
 
